@@ -207,6 +207,9 @@ fi
 
 if [ ${INPUT_UPLOAD^^} == 'TRUE' ]; then
   # update binary and checksum
+  echo "Running uploader with:"
+  echo "$BASE_UPLOADER_COMMAND -f $RELEASE_ASSET_PATH -mediatype $MEDIA_TYPE"
+  
   ${BASE_UPLOADER_COMMAND} -f ${RELEASE_ASSET_PATH} -mediatype ${MEDIA_TYPE} 
   if [ ${INPUT_MD5SUM^^} == 'TRUE' ]; then
     MD5_EXT='.md5'
